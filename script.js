@@ -15,7 +15,7 @@ console.log("Ваш буджет на месяц: ", budgetMonth);
 console.log(`Вы соберете ${mission} руб через ${Math.ceil(bud)} месяцев`);
 
 
-let budgetDay = budgetMonth / 24;
+let budgetDay = budgetMonth / 30;
 console.log("Бюджет на один день: ", Math.floor(budgetDay), "руб");
 
 if (budgetMonth >= 1200){
