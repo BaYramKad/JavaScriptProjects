@@ -17,12 +17,6 @@ console.log(`Вы соберете ${mission} руб через ${Math.ceil(bud)
 let budgetDay = budgetMonth;
 console.log(Math.floor(budgetDay))
 
-/*
- Поправить budgetDay учитывая бюджет на месяц, 
- а не месячный доход. Вывести в консоль  округлив 
- в меньшую сторону 
- */
-
 if (budgetDay >= 1200){
     console.log("У вас высокий уровень дохода");
 } else if (budgetDay >= 600 && budgetDay <= 1200){
