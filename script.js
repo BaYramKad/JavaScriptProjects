@@ -14,16 +14,21 @@ const bud = mission / budgetMonth;
 console.log("Ваш буджет на месяц: ", budgetMonth);
 console.log(`Вы соберете ${mission} руб через ${Math.ceil(bud)} месяцев`);
 
-let budgetDay = budgetMonth;
-console.log(Math.floor(budgetDay))
 
-if (budgetDay >= 1200){
+if (budgetMonth === "Infinity"){
+    console.log("Весь доход за месяц, достается вам");
+} else{
+    let budgetDay = budgetMonth / 24;
+    console.log("Бюджет на один день: ", Math.floor(budgetDay), "руб");
+}
+
+if (budgetMonth >= 1200){
     console.log("У вас высокий уровень дохода");
-} else if (budgetDay >= 600 && budgetDay <= 1200){
+} else if (budgetMonth >= 600 && budgetMonth <= 1200){
     console.log("У вас средний уровень дохода");
-} else if (budgetDay <= 600 && budgetDay >= 0){
+} else if (budgetMonth <= 600 && budgetMonth >= 0){
     console.log("К сожалению у вас уровень дохода ниже среднего");
-} else if (budgetDay < 0){
+} else if (budgetMonth < 0){
     console.log("Что то пошло не так");
 }
 
