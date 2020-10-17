@@ -15,12 +15,8 @@ console.log("Ваш буджет на месяц: ", budgetMonth);
 console.log(`Вы соберете ${mission} руб через ${Math.ceil(bud)} месяцев`);
 
 
-if (budgetMonth === "Infinity"){
-    console.log("Весь доход за месяц, достается вам");
-} else{
-    let budgetDay = budgetMonth / 24;
-    console.log("Бюджет на один день: ", Math.floor(budgetDay), "руб");
-}
+let budgetDay = budgetMonth / 24;
+console.log("Бюджет на один день: ", Math.floor(budgetDay), "руб");
 
 if (budgetMonth >= 1200){
     console.log("У вас высокий уровень дохода");
