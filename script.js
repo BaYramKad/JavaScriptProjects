@@ -1,18 +1,21 @@
-
-let money = +prompt("Ваш месячный доход", "150000" );
+let money = +prompt("Ваш доход за месяц?", "75000");
 let income = "Фриланс";
 let deposit = true;
 let mission = 4000000; 
 
-console.log(typeof money);
-console.log(typeof income);
-console.log(typeof deposit); 
-console.log("Ваш доход за месяц: ", money); 
+const showTypeOf = function(typeData){
+    console.log(typeof typeData);
+}
 
+showTypeOf(money);
+showTypeOf(income);
+showTypeOf(deposit);
+
+console.log("Ваш доход за месяц: ", money); 
 const expenses = prompt("Введите обязательные расходы, например (Ремонт, Дом, Рестораны)");
-const emout = +prompt("Во сколько это обойдеться?", "25000");
+const emout = +prompt("Во сколько это обойдется?", "43000");
 const expenses2 = prompt("Введите обязательные расходы например (Спортзал, Кино)");
-const emout2 = +prompt("Во сколько это обойдеться?", "25000");
+const emout2 = +prompt("Во сколько это бойдется?", "2500");
 const addExpenses = expenses + expenses2;
 console.log(addExpenses.split(", "));
 
@@ -40,3 +43,20 @@ console.log(`Вы соберете ${mission} руб через ${Math.ceil(getT
 
 const resultgetDay = accumulatedMonth / 30;
 console.log("Бюджет на один день: ", Math.floor(resultgetDay), "руб");
+
+
+const getStatusIncome = function(){
+
+    if (accumulatedMonth >= 1200){
+        return "У вас высокий уровень дохода";
+    } else if (accumulatedMonth >= 600 && accumulatedMonth <= 1200){
+        return "У вас средний уровень дохода";
+    } else if (accumulatedMonth <= 600 && accumulatedMonth >= 0){
+        return "К сожалению у вас уровень дохода ниже среднего";
+    } else if (accumulatedMonth < 0){
+        return "Что то пошло не так";
+    }
+
+}
+
+console.log(getStatusIncome());
