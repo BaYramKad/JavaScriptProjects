@@ -28,19 +28,19 @@ console.log(addExpenses.toLowerCase().split(", "));
 console.log("Ваш доход за месяц: ", money);
 
 let expenses = [];
-
 function getExpensesMonth(){
-    let sumResult;
-    let sum;
+    let sum = 0;
+    let result = 0;
     for (let i = 0; i < 2; i++){
-        expenses[i] = prompt("Введите обязательную статью расхода, например (Квартплата)");
-        sum += sumResult;
-        while(!isNumber(sum)){
-            sum = prompt("Во сколько это обойдется ?");
-        };
+        expenses[i] = prompt("Введите обязательную статью расхода, например (Квартплата)");    
+        do{
+            sum = +prompt("Во сколько это обойдется ?");
+        }
+        while(!isNumber(sum));
+        result += +sum;
     }
     console.log(expenses);
-    return sum;
+    return result;
 }
 
 let resultExpenses = getExpensesMonth();
