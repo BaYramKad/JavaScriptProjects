@@ -15,8 +15,6 @@ const start = function(){
 }
 start();
 
-let er = "3";
-console.log(parseFloat(er));
 const showTypeOf = function(typeData){
     console.log(typeof typeData);
 }
