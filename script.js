@@ -1,4 +1,5 @@
-"use strict";
+
+
 const isNumber = function(n){
     return  !isNaN(parseFloat(n)) && isFinite(n);
 }
