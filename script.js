@@ -69,7 +69,6 @@ let appData = {
         }
     }
 };
-console.log(appData);
 appData.asking();
 appData.expenses();
 console.log("Ваш доход за месяц: ", appData.budget);
