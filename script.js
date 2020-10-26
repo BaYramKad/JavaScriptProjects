@@ -76,10 +76,7 @@ appData.getExpensesMonth();
 appData.getBudget();
 
 console.log("Расходы за месяц: ", appData.expensesMonth, " руб");
-// console.log("Ваш бюджет на месяц: ", appData.budgetMonth, " руб");
-// console.log("Бюджет на один день: ", Math.floor(appData.budgetDay), " руб");
 console.log(appData.getTargetMonth());
-// console.log(appData.getStatusIncome());
 
 console.log("Наша программа включает в себя данные:");
 for (let key in appData){
