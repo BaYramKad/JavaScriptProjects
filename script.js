@@ -29,8 +29,8 @@ let appData = {
             let itemIncome;
             let cachIncome;
             do{
-                itemIncome = prompt("Какой у вас есть дополнительный заработок?", "Таксую");
-            } while(itemIncome.trim() === "" || itemIncome === null);
+                itemIncome = prompt("Какой у вас есть дополнительный заработок?");
+            } while(itemIncome.trim() === "" || itemIncome === null || Number(itemIncome));
             do{
                 cachIncome = prompt("Сколько в месяц зарабатываете на этом?", 10000);
             }
