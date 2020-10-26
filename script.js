@@ -35,15 +35,22 @@ let appData = {
                         }
                         while(!isNumber(sum));
                         appData.expenses[exp] = sum;
-                }
+                        let num = 0;
+                        for(let key in appData.expenses){
+                            num += appData.expenses[key];
+                        }
+                        appData.expenses = num;
+                    }
             };
     },
     budgetDay: 0,
     budgetMonth: 0,
     expensesMonth: 0,
     getExpensesMonth: function(){
+        let sum = 0;
         for(let key in appData.expenses){
             appData.expensesMonth += appData.expenses[key];
+            sum += appData.expenses[key];
         }
     },
     getTargetMonth: function() {
@@ -71,6 +78,7 @@ let appData = {
 };
 appData.asking();
 appData.expenses();
+console.log(appData);
 console.log("Ваш доход за месяц: ", appData.budget);
 appData.getExpensesMonth();
 appData.getBudget();
@@ -82,4 +90,3 @@ console.log("Наша программа включает в себя данны
 for (let key in appData){
     console.log ("Свойство: ", key, "|", "Значение: ", appData[key]); 
 };
-
