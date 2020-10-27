@@ -25,11 +25,6 @@ const targetMonth = document.getElementsByClassName("target_month-value");
 const periodSelect = document.getElementsByClassName("period-select");
 
 
-
-
-
-
-
 let isNumber = function(n){
     return !isNaN(parseFloat(n)) && isFinite(n);
 };
