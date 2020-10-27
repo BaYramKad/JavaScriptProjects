@@ -1,11 +1,41 @@
 'use strict';
+const income = document.querySelector(".income");
+const incomeTitle = document.querySelector(".income-title");
+const incomeAmout = document.querySelector(".income-amout");
+const expenses = document.querySelector(".expenses");
+const expensesTitle = document.querySelector(".expenses-title");
+const expensesAmout = document.querySelector(".expenses-amout");
+const addExpItem = document.querySelector(".additional_expenses-item");
+const targetAmout = document.querySelector(".target-amount");
+const checkbox = document.querySelector(".deposit-checkmark");
+
+const incomeItem = document.querySelectorAll(".additional_income-item");
+const salaryAmout = document.querySelectorAll(".salary-amount");
+
+const buttonStart = document.getElementById("start");
+const incomeBtnPlus = income.getElementsByTagName("button");
+const expensesBtnPlus = expenses.getElementsByTagName("button");
+
+const budGetDay = document.getElementsByClassName("budget_day-value");
+const expensesMonth = document.getElementsByClassName("expenses_month-value");
+const addIncome = document.getElementsByClassName("additional_income-value");
+const addExpenses = document.getElementsByClassName("additional_expenses-value");
+const incomePeriod = document.getElementsByClassName("income_period-value");
+const targetMonth = document.getElementsByClassName("target_month-value");
+const periodSelect = document.getElementsByClassName("period-select");
+
+
+
+
+
+
 
 let isNumber = function(n){
     return !isNaN(parseFloat(n)) && isFinite(n);
 };
 
 let money,
-     start = function() {
+    start = function() {
         do{
             money = +prompt("Ваш месячный доход?","");
         } while (!isNumber(money)); 
