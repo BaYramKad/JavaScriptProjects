@@ -1,28 +1,32 @@
 'use strict';
-const income = document.querySelector(".income");
+
+
 const incomeTitle = document.querySelector(".income-title");
 const incomeAmout = document.querySelector(".income-amout");
-const expenses = document.querySelector(".expenses");
+
 const expensesTitle = document.querySelector(".expenses-title");
 const expensesAmout = document.querySelector(".expenses-amout");
 const addExpItem = document.querySelector(".additional_expenses-item");
 const targetAmout = document.querySelector(".target-amount");
 const checkbox = document.querySelector(".deposit-checkmark");
+const income = document.querySelector(".income");
+const expenses = document.querySelector(".expenses");
 
 const incomeItem = document.querySelectorAll(".additional_income-item");
 const salaryAmout = document.querySelectorAll(".salary-amount");
 
 const buttonStart = document.getElementById("start");
-const incomeBtnPlus = income.getElementsByTagName("button");
-const expensesBtnPlus = expenses.getElementsByTagName("button");
 
-const budGetDay = document.getElementsByClassName("budget_day-value");
-const expensesMonth = document.getElementsByClassName("expenses_month-value");
-const addIncome = document.getElementsByClassName("additional_income-value");
-const addExpenses = document.getElementsByClassName("additional_expenses-value");
-const incomePeriod = document.getElementsByClassName("income_period-value");
-const targetMonth = document.getElementsByClassName("target_month-value");
-const periodSelect = document.getElementsByClassName("period-select");
+const incomeBtnPlus = income.getElementsByTagName("button")[0];
+const expensesBtnPlus = expenses.getElementsByTagName("button")[0];
+
+const budGetDay = document.getElementsByClassName("budget_day-value")[0];
+const expensesMonth = document.getElementsByClassName("expenses_month-value")[0];
+const addIncome = document.getElementsByClassName("additional_income-value")[0];
+const addExpenses = document.getElementsByClassName("additional_expenses-value")[0];
+const incomePeriod = document.getElementsByClassName("income_period-value")[0];
+const targetMonth = document.getElementsByClassName("target_month-value")[0];
+const periodSelect = document.getElementsByClassName("period-select")[0];
 
 
 let isNumber = function(n){
