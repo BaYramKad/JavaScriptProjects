@@ -27,7 +27,7 @@ let incomeTitle = document.querySelector(".income-title"),
 let isNumber = function(n){
     return !isNaN(parseFloat(n)) && isFinite(n);
 };
-
+let amuntValue;
 let appData = {
     income: {},
     addIncome: [],
@@ -54,7 +54,6 @@ let appData = {
         expensesItems = document.querySelectorAll(".expenses-items");
         if (expensesItems.length === 3){
             expensesBtnPlus.style.display = "none";
-            
         }
     },
     getexpenses: function(){
@@ -90,10 +89,12 @@ let appData = {
         addExpensesValue.value = appData.addExpenses.join(", ");
         additionalIncomeValue.value = appData.addIncome.join(", ");
         targetMonth.value = Math.ceil(appData.getTargetMonth());
-        incomePeriod.value = appData.budgetMonth;
+
+        incomePeriod.value = +appData.budgetMonth;
+        incomePeriod.value = +appData.budgetMonth * periodSelect.value;
         periodSelect.addEventListener("input", function(){
-            let resultAmount = appData.budgetMonth * periodAmount.value;
-            return incomePeriod.value = resultAmount;
+            let resultAmount = appData.budgetMonth * amuntValue;
+            incomePeriod.value = resultAmount;
         });
     },
     getAddExpenses: function(){
@@ -122,10 +123,10 @@ let appData = {
         for (let key in appData.expenses) {
            sum+= +appData.expenses[key]*1;
         }
-        appData.expensesMonth = sum;
+        appData.expensesMonth = +sum;
     },
     getBudget: function() {
-        appData.budgetMonth = appData.budget - appData.expensesMonth;
+        appData.budgetMonth = +appData.budget - +appData.expensesMonth;
         appData.budgetDay = appData.budgetMonth / 30;
     },
     getTargetMonth: function() {
@@ -160,17 +161,12 @@ let appData = {
         }
     },
     calcSavedMoney: function(){
-        let value = periodSelect.value;
-        periodAmount.textContent = +value;
-        periodAmount.value = periodSelect.value;
-        const resultAmount = appData.budgetMonth * periodAmount.value;
-        return resultAmount;
-
+        let value = +periodSelect.value;
+        amuntValue = periodAmount.textContent = +value;
+        let amountSelect = (amuntValue = +periodSelect.value);
+        return amountSelect;
     }
 };
-console.log(appData);
-
-
 salaryAmount.addEventListener("input", function() {
     if (salaryAmount.value === "") {
         buttonStart.disabled = true;
