@@ -1,5 +1,5 @@
 'use strict';
-console.log(`test message`);
+
 let incomeTitle = document.querySelector(".income-title"),
     incomeAmout = document.querySelector(".income-amount"),
     expensesTitle = document.querySelector(".expenses-title"),
