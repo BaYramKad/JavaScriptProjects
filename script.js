@@ -1,8 +1,4 @@
 let body = document.querySelector("body");
-body.innerHTML = "<div></div>";
-let div = document.querySelector("div");
-console.log('div: ', div);
-
 const DomElement = function (selector, height, width, bg, fontSize) {
     this.selector = selector;
     this.height = height;
@@ -10,8 +6,10 @@ const DomElement = function (selector, height, width, bg, fontSize) {
     this.bg = bg;
     this.fontSize = fontSize;
 }
-DomElement.prototype.block = function () {
+DomElement.prototype.block = function() {
     if (this.selector[0] === "."){
+        body.innerHTML = "<div></div>";
+        let div = document.querySelector("div");
         div.classList.add("block");
         div.textContent = "Класс";
         div.style.color = "white";
@@ -20,13 +18,15 @@ DomElement.prototype.block = function () {
         div.style.backgroundColor = this.bg;
         div.style.fontSize = this.fontSize;
     } else if (this.selector[0] === "#"){
-        div.id = "best";
-        div.style.width = this.width;
-        div.style.height = this.height;
-        div.style.backgroundColor = this.bg;
-        div.style.fontSize = this.fontSize;
-        div.textContent = "Айди";
-        div.style.color = "white";
+        body.innerHTML = "<p></p>";
+        let p = document.querySelector("p");    
+        p.id = "best";
+        p.style.width = this.width;
+        p.style.height = this.height;
+        p.style.backgroundColor = this.bg;
+        p.style.fontSize = this.fontSize;
+        p.textContent = "Айди";
+        p.style.color = "white";
     }
 };
 let block = new DomElement();
