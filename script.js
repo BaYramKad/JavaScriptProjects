@@ -1,15 +1,17 @@
-let body = document.querySelector("body");
-const DomElement = function (selector, height, width, bg, fontSize) {
-    this.selector = selector;
-    this.height = height;
-    this.width = width;
-    this.bg = bg;
-    this.fontSize = fontSize;
-}
-DomElement.prototype.block = function() {
-    if (this.selector[0] === "."){
-        body.innerHTML = "<div></div>";
-        let div = document.querySelector("div");
+document.addEventListener("DOMContentLoaded", function() {
+    const body = document.querySelector("body");
+    body.innerHTML = "<div></div>";
+    const div = document.querySelector("div");
+    body.style.width = "100%";
+    body.style.height = "100%";
+    const DomElement = function () {
+        this.height = "200px";
+        this.width = "200px";
+        this.bg = "#000";
+        this.fontSize = "20px";
+    };
+    
+    DomElement.prototype.block = function() {
         div.classList.add("block");
         div.textContent = "Класс";
         div.style.color = "white";
@@ -17,30 +19,29 @@ DomElement.prototype.block = function() {
         div.style.width = this.width;
         div.style.backgroundColor = this.bg;
         div.style.fontSize = this.fontSize;
-    } else if (this.selector[0] === "#"){
-        body.innerHTML = "<p></p>";
-        let p = document.querySelector("p");    
-        p.id = "best";
-        p.style.width = this.width;
-        p.style.height = this.height;
-        p.style.backgroundColor = this.bg;
-        p.style.fontSize = this.fontSize;
-        p.textContent = "Айди";
-        p.style.color = "white";
+        div.style.fontFamily = "Ruso One, sans-serif";
+        div.style.textAlign = "center";
+        div.style.position = "absolute";
+    };
+    const block = new DomElement();
+    function foo(callback){
+        DomElement.call(this, arguments);
+        callback();
+        
+        document.addEventListener("keydown", function (event){
+            let key = event.key;
+            console.log('key: ', key);
+            if (key === "ArrowUp"){
+                div.style.transform = "translateY(-10)";
+            } else if (key === "ArrowDown"){
+                div.style.transform = "translateY(10px)";
+            } else if (key === "ArrowRight"){
+                div.style.transform = "translateX(10px)";
+            } else if (key === "ArrowLeft"){
+                div.style.transform = "translateX(-10px)";
+            }
+            callback();
+        });
     }
-};
-let block = new DomElement();
-const Element = function (selector, height, width, bg, fontSize) {
-    DomElement.call(this, arguments);
-    this.selector = selector;
-    this.height = height;
-    this.width = width;
-    this.bg = bg;
-    this.fontSize = fontSize;
-    this.block();
-};
-
-Element.prototype = Object.create(DomElement.prototype);
-
-let elem = new Element("#23432s", "100px", "100px", "#000", "14px");
-DomElement.prototype.constructor = Element;
+    foo(block.block);
+});
