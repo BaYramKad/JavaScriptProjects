@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 div.style.transform = 10 + "px";
             } 
             if (event.which === 37 || down > 0){
-                div.styletransform = 10 + "px";
+                div.style.transform = 10 + "px";
             }
         };
     }
